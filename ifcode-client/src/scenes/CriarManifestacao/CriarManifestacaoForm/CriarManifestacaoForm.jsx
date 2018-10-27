@@ -43,7 +43,6 @@ export default class CriarManifestacaoForm extends Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <div className="form-manifestacao">
                 <h5>Crie uma nova manifestação!</h5>

@@ -3,7 +3,6 @@ import React from "react"
 import './Botao.css'
 
 const KratosBotao = props => {
-    console.log('AQUI')
     return (
         <button
             {...props}
