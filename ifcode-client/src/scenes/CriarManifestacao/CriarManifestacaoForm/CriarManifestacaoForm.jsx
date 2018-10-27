@@ -18,9 +18,20 @@ export default class CriarManifestacaoForm extends Component {
     }
 
     handleChangeFile(event) {
-        if(event.target.files )
-        let file = event.target.files[0]
-        let fileReader = new FileReader();
+        if (event.target.files) {
+            let file = event.target.files[0]
+            let fileReader = new FileReader()
+
+            fileReader.readAsDataURL(file)
+
+            fileReader.onload = (fileLoadedEvent) => {
+                let image = fileLoadedEvent.target.result
+
+                this.setState({
+                    image: image
+                })
+            }
+        }
     }
 
     handleChangeSelect(event) {
@@ -99,8 +110,8 @@ export default class CriarManifestacaoForm extends Component {
                         name='image'
                         label='Imagem (Opcional)'
                         accept="image/*"
-                        value={this.state.imagem}
-                        onChange={this.handleChange}
+                        value={this.state.file}
+                        onChange={this.handleChangeFile}
                     />
                 </div>
                 <div className='form-manifestacao-div'>
