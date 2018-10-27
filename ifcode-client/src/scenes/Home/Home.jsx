@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import MenuAppBar from '../../components/Menu/MenuAppBar/MenuAppBar';
 import BotaoAdicionar from '../../components/generic/BotaoAdicionar/BotaoAdicionar';
+import CriarManifestacao from '../CriarManifestacao/CriarManifestacao';
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -26,7 +27,7 @@ export default class Home extends React.Component {
                     <Route path='/pesquisar' exact component={Home} />
                     <Route path='/minhas-organizacoes' exact component={Home} />
                     <Route path='/minhas-manifestacoes' exact component={Home} />
-                    <Route path='/criar-manifestacao' exact component={Home} />
+                    <Route path='/criar-manifestacao' exact component={CriarManifestacao} />
                     <Route path='/manifestacao/:id' exact component={Home} />
                     <Route path='/manual' exact component={Home} />
                     <Redirect to="/" />

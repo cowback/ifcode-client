@@ -1,11 +1,10 @@
 import React from 'react'
+import CriarManifestacaoForm from './CriarManifestacaoForm/CriarManifestacaoForm'
 
 export default class CriarManifestacao extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
-    return (<div></div>)
+    return (<div>
+      <CriarManifestacaoForm />
+    </div>)
   }
 }
