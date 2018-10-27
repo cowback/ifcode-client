@@ -1,5 +1,6 @@
 import axios from 'axios';
-const baseURL = `${process.env.API}/api/v1`
+// const baseURL = `${process.env.API}/api/v1`
+const baseURL = `http://192.168.240.247:3000/api/v1`
 
 class HttpService {
     post(url, data) {
