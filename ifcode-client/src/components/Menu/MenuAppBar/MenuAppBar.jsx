@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import DrawerMenu from '../DrawerMenu/DrawerMenu';
 import { Link } from 'react-router-dom';
+import kratosTxt from '../../../assets/kratosTxt.svg';
 
 const styles = {
   root: {
@@ -15,11 +16,16 @@ const styles = {
     minHeight: 70
   },
   colorPrimary: {
-    backgroundColor: '#454040',
+    backgroundColor: '#272727',
     position: 'fixed'
   },
-  link: {
-    color: '#ffffff'
+  logo: {
+    height: '25px',
+    paddingLeft: '5px',
+  },
+  navbar: {
+    paddingLeft: '3px',
+    paddingRight: '16px'
   }
 };
 
@@ -52,7 +58,7 @@ class MenuAppBar extends React.Component {
     return (
       <div className={classes.root}>
         <AppBar position='static' className={classes.colorPrimary}>
-          <Toolbar>
+          <Toolbar className={classes.navbar}>
             <IconButton
               className={classes.menuButton}
               color='inherit'
@@ -65,9 +71,8 @@ class MenuAppBar extends React.Component {
               <Typography
                 variant="title"
                 color='inherit'
-                className={classes.link}
               >
-                Kratos
+                <img src={ kratosTxt } alt="Kratos" className={classes.logo}/>
               </Typography>
             </Link>
           </Toolbar>
