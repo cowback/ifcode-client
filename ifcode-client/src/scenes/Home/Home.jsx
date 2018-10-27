@@ -5,10 +5,6 @@ import BotaoAdicionar from '../../components/generic/BotaoAdicionar/BotaoAdicion
 import CriarManifestacao from '../CriarManifestacao/CriarManifestacao';
 
 export default class Home extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
     _renderNavBar() {
         return <MenuAppBar onLogout={this.makeLogout} />;
     }
