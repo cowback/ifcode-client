@@ -37,6 +37,7 @@ export default class CriarManifestacao extends React.Component {
       titulo: data.titulo,
       descricao: data.descricao,
       imagem: data.imagem,
+      data: data.data
     };
 
     let organizacao = {
