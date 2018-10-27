@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import MenuAppBar from '../../components/Menu/MenuAppBar/MenuAppBar';
 import BotaoAdicionar from '../../components/generic/BotaoAdicionar/BotaoAdicionar';
 import CriarManifestacao from '../CriarManifestacao/CriarManifestacao';
+import Manual from '../Manual/Manual'
 
 export default class Home extends React.Component {
     _renderNavBar() {
@@ -25,7 +26,7 @@ export default class Home extends React.Component {
                     <Route path='/minhas-manifestacoes' exact component={Home} />
                     <Route path='/criar-manifestacao' exact component={CriarManifestacao} />
                     <Route path='/manifestacao/:id' exact component={Home} />
-                    <Route path='/manual' exact component={Home} />
+                    <Route path='/manual' exact component={Manual} />
                     <Redirect to="/" />
                 </Switch>
             </div>)
