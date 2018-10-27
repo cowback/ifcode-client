@@ -13,10 +13,15 @@ export default class CriarManifestacaoForm extends Component {
     constructor() {
         super()
         this.handleChangeSelect = this.handleChangeSelect.bind(this)
+        this.onClickContinuarButton = this.onClickContinuarButton.bind(this)
     }
 
     handleChangeSelect(event) {
         this.setState({ [event.target.name]: event.target.value, organizacaoName: JSON.parse(event.target.value).name })
+    }
+
+    onClickContinuarButton() {
+        this.props.setData(this.state);
     }
 
     _renderMenuItems() {
@@ -50,9 +55,9 @@ export default class CriarManifestacaoForm extends Component {
                     <TextField
                         className="TextField-mappit"
                         type="text"
-                        name="nome"
-                        label="Nome da Manifestação"
-                        value={this.state.nome}
+                        name="titulo"
+                        label="Título da Manifestação"
+                        value={this.state.titulo}
                         onChange={this.handleChange}
                     />
                 </div>
@@ -70,9 +75,9 @@ export default class CriarManifestacaoForm extends Component {
                     <TextField
                         className="TextField-mappit"
                         type="file"
-                        name="descricao"
+                        name="image"
                         label="Imagem (Opcional)"
-                        value={this.state.descricao}
+                        value={this.state.imagem}
                         onChange={this.handleChange}
                     />
                 </div>

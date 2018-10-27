@@ -1,0 +1,28 @@
+.Demo__search-bar-container {
+  z-index: 1;
+  top: 9%;
+  left: 10%;
+  background-color: #fff;
+}
+
+input.Demo__search-input {
+  font-size: 20px;
+}
+
+button.Demo__clear-button {
+  display: none;
+}
+
+.Demo__search-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pesquisa-local-input {
+  position: absolute;
+  top: 10%;
+  z-index: 3;
+  width: 80%;
+  margin-left: 10%;
+}
