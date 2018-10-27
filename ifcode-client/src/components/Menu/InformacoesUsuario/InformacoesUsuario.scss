@@ -1,0 +1,17 @@
+.menu-informacoes-usuario {
+  background-color: #b5985a;
+  color: #ffffff;
+  padding: 20px;
+  word-break: break-word;
+
+  .nome-usuario {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .email-usuario {
+    font-size: 14px;
+    margin-top: 0;
+  }
+}
