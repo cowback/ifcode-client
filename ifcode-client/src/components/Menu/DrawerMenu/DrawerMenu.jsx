@@ -12,7 +12,7 @@ import CloseIcon from '@material-ui/icons/Close';
 
 const styles = {
   colorPrimary: {
-    backgroundColor: '#454040'
+    backgroundColor: '#272727'
   },
   list: {
     width: 250

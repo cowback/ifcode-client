@@ -18,9 +18,10 @@ export default class CriarManifestacaoForm extends Component {
     }
 
     handleChangeFile(event) {
-        if(event.target.files )
-        let file = event.target.files[0]
-        let fileReader = new FileReader();
+        if (event.target.files) {
+            let file = event.target.files[0]
+            let fileReader = new FileReader();
+        }
     }
 
     handleChangeSelect(event) {
