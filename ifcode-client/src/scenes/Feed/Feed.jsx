@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardManifestacao from '../../components/CardManifestacao/CardManifestacao'
 import BotaoAdicionar from '../../components/generic/BotaoAdicionar/BotaoAdicionar'
+import manifestacaoService from '../../services/ManifestacaoService'
 
 import './Feed.scss'
 
@@ -11,8 +12,9 @@ export default class Feed extends Component {
         this._buscarManifestacoes()
     }
 
-    _buscarManifestacoes() {
+    async _buscarManifestacoes() {
         // TODO: BUSCAR AQUI AS MANIFESTAÇÕES
+        const { data } = await manifestacaoService.listar()
         const manifestacoes = [
             {
                 id: 1,
@@ -33,7 +35,7 @@ export default class Feed extends Component {
                 },
             },
         ]
-        this.setState({ manifestacoes })
+        this.setState({ manifestacoes: data })
     }
 
     _renderButton() {
