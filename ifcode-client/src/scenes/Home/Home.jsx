@@ -4,6 +4,7 @@ import MenuAppBar from '../../components/Menu/MenuAppBar/MenuAppBar';
 import BotaoAdicionar from '../../components/generic/BotaoAdicionar/BotaoAdicionar';
 import CriarManifestacao from '../CriarManifestacao/CriarManifestacao';
 import Manual from '../Manual/Manual'
+import Feed from '../Feed/Feed'
 
 export default class Home extends React.Component {
     _renderNavBar() {
@@ -20,7 +21,7 @@ export default class Home extends React.Component {
                 {this._renderNavBar()}
                 {this._renderButton()}
                 <Switch>
-                    <Route path="/inicial" exact />
+                    <Route path="/inicial" exact component={Feed} />
                     <Route path='/pesquisar' exact component={Home} />
                     <Route path='/minhas-organizacoes' exact component={Home} />
                     <Route path='/minhas-manifestacoes' exact component={Home} />

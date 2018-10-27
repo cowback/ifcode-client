@@ -11,6 +11,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 // import UsuarioAvatar from '../generic/UsuarioAvatar/UsuarioAvatar';
 import { Link } from 'react-router-dom';
 
+import './CardManifestacao.scss'
+
 const styles = theme => ({
     card: {
         width: 360,
@@ -67,13 +69,13 @@ class CardManifestacao extends React.Component {
         const { classes } = this.props;
 
         return (
-            <div>
+            <div className="card">
                 <Card className={classes.card}>
                     <Link to={`/manifestacao/${this.props.manifestacao.id}`}>
                         <div className={classes.header}>
                             {/* <UsuarioAvatar type='big' usuario={this.props.lista.usuario} /> */}
                             <div className={classes.infoLista}>
-                                <h5 className={classes.info}>{this.props.manifestacao.titulo}</h5>
+                                <h5 className={classes.info}>{this.props.manifestacao.name}</h5>
                                 <h6 className={classes.info}>
                                     {this.props.organizacao.nome}
                                 </h6>
@@ -82,12 +84,12 @@ class CardManifestacao extends React.Component {
                     </Link>
                     <CardContent className={classes.content}>
                         <Link to={`/manifestacao/${this.props.manifestacao.id}`}>
-                            <img src={this.props.manifestacao.imagem} alt='Manifestação' />
+                            <img className="imagem" src={this.props.manifestacao.image} alt='Manifestação' />
                         </Link>
                     </CardContent>
                     <CardActions className={classes.actions} disableActionSpacing>
-                        {!!this.props.manifestacao.descricao ? (
-                            <div className={classes.descricao}>
+                        {!!this.props.manifestacao.description ? (
+                            <div className={classes.description}>
                                 <span>Descrição</span>
                                 <IconButton
                                     className={classnames(classes.expand, {
@@ -104,7 +106,7 @@ class CardManifestacao extends React.Component {
                     </CardActions>
                     <Collapse in={this.state.expanded} timeout='auto' unmountOnExit>
                         <CardContent>
-                            <span>{this.props.manifestacao.descricao}</span>
+                            <span>{this.props.manifestacao.description}</span>
                         </CardContent>
                     </Collapse>
                 </Card>

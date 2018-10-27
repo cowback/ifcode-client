@@ -1,0 +1,9 @@
+.feed {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .card {
+        display: inline-block;
+    }
+}
