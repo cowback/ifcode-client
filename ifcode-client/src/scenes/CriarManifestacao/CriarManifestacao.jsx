@@ -15,10 +15,6 @@ export default class CriarManifestacao extends React.Component {
   }
 
   saveLocal(latitude, longitude) {
-
-    console.log(latitude);
-    console.log(longitude);
-    
     let manifestacao = this.state.manifestacao;
     manifestacao.latitude = latitude;
     manifestacao.longitude = longitude;
