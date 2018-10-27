@@ -1,6 +1,7 @@
 import React from 'react';
 import MapComponent from '../../components/mapComponent/map-container';
 import CriarManifestacaoForm from './CriarManifestacaoForm/CriarManifestacaoForm';
+import manifestacaoService from '../../services/ManifestacaoService'
 
 export default class CriarManifestacao extends React.Component {
   constructor() {
@@ -21,11 +22,12 @@ export default class CriarManifestacao extends React.Component {
 
     this.setState({
       manifestacao: manifestacao
-    });
+    }, () => this._saveManifestacao());
   }
 
-  _saveManifestacao() {
-    // TODO chamar api
+  async _saveManifestacao() {
+    await manifestacaoService.criar(this.state.manifestacao)
+    // TODO alertar, limpar campos
   }
 
   setManifestacao(data) {
