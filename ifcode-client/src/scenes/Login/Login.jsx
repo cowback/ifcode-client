@@ -13,7 +13,7 @@ const style = {
     background: 'rgb(209, 72, 54)',
     color: 'rgb(255, 255, 255)',
     padding: '10px 0',
-    borderradius: '2px',
+    borderRadius: '15px',
     border: '1px solid transparent'
 };
 
