@@ -7,10 +7,20 @@ import InputLabel from '@material-ui/core/InputLabel'
 import './CriarManifestacaoForm.scss'
 
 export default class CriarManifestacaoForm extends Component {
-    state = { organizacoes: [], organizacao: '', organizacaoName: '' }
+    state = {
+        organizacoes: [],
+        organizacao: '',
+        organizacaoName: '',
+        ativistas: [],
+        name: '',
+        description: '',
+        image: '',
+        date: '',
+    }
 
     constructor() {
         super()
+        this.handleChange = this.handleChange.bind(this)
         this.handleChangeFile = this.handleChangeFile.bind(this)
         this.handleChangeSelect = this.handleChangeSelect.bind(this)
         this.onClickContinuarButton = this.onClickContinuarButton.bind(this)
@@ -18,6 +28,7 @@ export default class CriarManifestacaoForm extends Component {
 
     componentDidMount() {
         this._buscarOrganizacao()
+        this._buscarAtivistas()
     }
 
     handleChangeFile(event) {
@@ -31,14 +42,22 @@ export default class CriarManifestacaoForm extends Component {
                 let image = fileLoadedEvent.target.result
 
                 this.setState({
-                    image: image
+                    image
                 })
             }
         }
     }
 
+    handleChange(event) {
+        this.setState({ [event.target.id]: event.target.value })
+    }
+
     handleChangeSelect(event) {
         this.setState({ [event.target.name]: event.target.value, organizacaoName: JSON.parse(event.target.value).name })
+    }
+
+    handleChangeAtivista(event) {
+        this.setState({ [event.target.name]: event.target.value, ativistaName: JSON.parse(event.target.value).name })
     }
 
     onClickContinuarButton() {
@@ -49,7 +68,7 @@ export default class CriarManifestacaoForm extends Component {
         const organizacoes = [
             {
                 id: 1,
-                name: 'PSOL Unidos'
+                name: 'PSOL'
             },
             {
                 id: 2,
@@ -64,9 +83,29 @@ export default class CriarManifestacaoForm extends Component {
         this.setState({ organizacoes })
     }
 
+    _buscarAtivistas() {
+        const ativistas = [
+            {
+                id: 1,
+                name: 'Rodrigo Remor'
+            },
+        ]
+
+        this.setState({ ativistas })
+    }
+
     _renderMenuItems() {
         const { organizacoes } = this.state
         return organizacoes.map(o => {
+            return (
+                <option key={o.id} value={JSON.stringify(o)}>{o.name}</option>
+            )
+        })
+    }
+
+    _renderAtivistas() {
+        const { ativistas } = this.state
+        return ativistas.map(o => {
             return (
                 <option key={o.id} value={JSON.stringify(o)}>{o.name}</option>
             )
@@ -79,11 +118,12 @@ export default class CriarManifestacaoForm extends Component {
                 <h3>Crie uma nova manifestação!</h3>
                 <div className='form-manifestacao-div'>
                     <TextField
+                        id="name"
                         className='TextField-mappit'
                         type='text'
                         name='titulo'
                         label='Título da Manifestação'
-                        value={this.state.titulo}
+                        value={this.state.name}
                         onChange={this.handleChange}
                     />
                 </div>
@@ -92,7 +132,7 @@ export default class CriarManifestacaoForm extends Component {
                         id='date'
                         label='Data'
                         type='datetime-local'
-                        value={this.state.data}
+                        value={this.state.date}
                         onChange={this.handleChange}
                         className='TextField-mappit'
                         InputLabelProps={{
@@ -102,11 +142,12 @@ export default class CriarManifestacaoForm extends Component {
                 </div>
                 <div className='form-manifestacao-div'>
                     <TextField
+                        id="description"
                         className='TextField-mappit'
                         type='textarea'
                         name='descricao'
                         label='Descrição (Opcional)'
-                        value={this.state.descricao}
+                        value={this.state.description}
                         onChange={this.handleChange}
                     />
                 </div>
@@ -123,7 +164,6 @@ export default class CriarManifestacaoForm extends Component {
                 </div>
                 <div className='form-manifestacao-div'>
                     <InputLabel htmlFor='select-organizacao'>Organização:</InputLabel>
-                    {console.log(this.state.organizacaoName)}
                     <Select
                         className='select-organizacao'
                         native
@@ -136,6 +176,22 @@ export default class CriarManifestacaoForm extends Component {
                         }}
                     >
                         {this._renderMenuItems()}
+                    </Select>
+                </div>
+                <div className='form-manifestacao-div'>
+                    <InputLabel htmlFor='select-organizacao'>Chefe de Segurança:</InputLabel>
+                    <Select
+                        className='select-organizacao'
+                        native
+                        open={this.state.open}
+                        value={this.state.ativistaName}
+                        onChange={this.handleChangeAtivista}
+                        inputProps={{
+                            name: 'ativista',
+                            id: 'select-organizacao'
+                        }}
+                    >
+                        {this._renderAtivistas()}
                     </Select>
                 </div>
                 <br />

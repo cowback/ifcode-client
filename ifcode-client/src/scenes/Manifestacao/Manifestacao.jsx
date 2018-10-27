@@ -2,22 +2,25 @@ import React from 'react'
 import './Manifestacao.scss'
 import Button from '../../components/generic/Botao/Botao'
 import AlertService from '../../services/AlertaService'
+import manifestacaoService from '../../services/ManifestacaoService';
 
 export default class Manifestacao extends React.Component {
     constructor() {
         super()
         this.state = {
-            manifestacao: {},
+            manifestacao: {
+                organizacao: {},
+            },
             text: 'Participar',
             participando: false,
-            alert: true
+            alert: true,
         }
         this.onClickContinuarButton = this.onClickContinuarButton.bind(this);
     }
 
     componentWillMount() {
         if (this.props.match.params.id) {
-            this._getManifestacao();
+            this._getManifestacao(this.props.match.params.id);
         }
     }
 
@@ -35,19 +38,9 @@ export default class Manifestacao extends React.Component {
         }
     }
 
-    _getManifestacao() {
-        // TODO chamar a service
-        this.setState({
-            manifestacao: {
-                id: 1,
-                name: 'Unidos contra o Fascismo',
-                description: 'Estamos reunidos contra o fascismo porque não podemos admitir esse tipo de ação em nosso país e nossas vidas, atingindo àqueles que amamos e nossos entes queridos. Venha se juntar a nós no dia 30/10 às 18hrs, no local indicado.',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Sad-pug.jpg',
-                organizacao: {
-                    name: 'PSOL',
-                },
-            }
-        })
+    async _getManifestacao(id) {
+        const { data } = await manifestacaoService.carregar(id)
+        this.setState({ manifestacao: data.data })
     }
 
     render() {

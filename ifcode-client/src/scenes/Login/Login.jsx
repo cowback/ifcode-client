@@ -38,27 +38,33 @@ export default class Login extends React.Component {
     }
 
     _goToHome() {
-        this.setState({
-            usuarioLogado: true
-        });
+        console.log('NO GO TO HOME')
+        this.setState({ usuarioLogado: true });
     }
 
     onGoogleResponse(response) {
+        console.log('NO GOOGLE RESPONSE')
+        localStorage.setItem('name', response.profileObj.name)
+        localStorage.setItem('email', response.profileObj.email)
+        localStorage.setItem('imageUrl', response.profileObj.imageUrl)
+
         LoginService.login(
             response.profileObj.name,
             response.profileObj.email,
             response.profileObj.imageUrl
-        ).then(result => {
-            this._goToHome();
-        });
+        )
+        this._goToHome()
     }
 
     onFailure(error) {
+        console.log('NO ERRO', error)
+        this._goToHome()
     }
 
     render() {
         if (this.state.usuarioLogado) {
-            return <Redirect to='/incial' />;
+            console.log('NO RENDER')
+            return <Redirect to='/inicial' />;
         }
         return (
             <div className='login'>

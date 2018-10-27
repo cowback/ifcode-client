@@ -32,11 +32,16 @@ export default class CriarManifestacao extends React.Component {
 
   setManifestacao(data) {
     let manifestacao = {
-      titulo: data.titulo,
-      descricao: data.descricao,
-      imagem: data.imagem,
-      data: data.data
-    };
+      name: data.name,
+      description: data.description,
+      image: data.imageUrl,
+      date: data.date,
+      dddCellphone: '51',
+      cellphone: '987654321',
+      email: localStorage.getItem('email') || 'teste@teste.com',
+      site: 'www.kratos.club',
+      securityCommittee: [1],
+    }
 
     let organizacao = {
       name: data.organizacaoName
