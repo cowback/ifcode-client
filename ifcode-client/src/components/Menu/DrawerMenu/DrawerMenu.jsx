@@ -63,7 +63,7 @@ class DrawerMenu extends React.Component {
           <div className={classes.list}>
             <ListaOpcoesMenu
               onLogout={this.props.onLogout}
-              onClick={this.props.changeScenario}
+              onChange={this.props.onChange}
             />
           </div>
         </SwipeableDrawer>

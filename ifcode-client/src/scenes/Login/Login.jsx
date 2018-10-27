@@ -2,7 +2,6 @@ import React from 'react'
 import { Redirect } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 import CONFIG from '../../config';
-import AlertaService from '../../services/AlertaService';
 import LoginService from '../../services/LoginService';
 import Logo from '../../components/generic/Logo/Logo';
 import './Login.scss';
@@ -22,7 +21,6 @@ export default class Login extends React.Component {
         super();
         this.state = {
             usuarioLogado: false,
-            mostrarToastAlerta: false,
             mensagemErro: ''
         };
         this.onGoogleResponse = this.onGoogleResponse.bind(this);

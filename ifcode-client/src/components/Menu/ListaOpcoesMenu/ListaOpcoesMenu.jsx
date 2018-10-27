@@ -27,25 +27,25 @@ class ListaOpcoesMenu extends React.Component {
       <div className={classes.root}>
         <List>
           <Link to='/inicial' className={classes.link}>
-            <ListItem button>
+            <ListItem button onClick={this.props.onChange}>
               <ListItemText primary='Página inicial' />
             </ListItem>
           </Link>
 
           <Link to='/minhas-organizacoes' className={classes.link}>
-            <ListItem button>
+            <ListItem button onClick={this.props.onChange}>
               <ListItemText primary='Minhas organizações' />
             </ListItem>
           </Link>
 
           <Link to='/minhas-manifestacoes' className={classes.link}>
-            <ListItem button>
+            <ListItem button onClick={this.props.onChange}>
               <ListItemText primary='Minhas manifestações' />
             </ListItem>
           </Link>
 
           <Link to='/manual' className={classes.link}>
-            <ListItem button>
+            <ListItem button onClick={this.props.onChange}>
               <ListItemText primary='Manual do Kratoniano' />
             </ListItem>
           </Link>

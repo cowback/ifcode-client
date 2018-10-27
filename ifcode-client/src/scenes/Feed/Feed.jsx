@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CardManifestacao from '../../components/CardManifestacao/CardManifestacao'
+import BotaoAdicionar from '../../components/generic/BotaoAdicionar/BotaoAdicionar'
 
 import './Feed.scss'
 
@@ -35,6 +36,10 @@ export default class Feed extends Component {
         this.setState({ manifestacoes })
     }
 
+    _renderButton() {
+        return <BotaoAdicionar link='/criar-manifestacao' />
+    }
+
     _renderManifestacoes() {
         const { manifestacoes } = this.state
         return manifestacoes.map(m => {
@@ -47,6 +52,7 @@ export default class Feed extends Component {
     render() {
         return (
             <div className="feed">
+                {this._renderButton()}
                 {this._renderManifestacoes()}
             </div>)
     }

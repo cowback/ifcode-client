@@ -67,7 +67,7 @@ class MenuAppBar extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <Link to='/incial'>
+            <Link to='/inicial'>
               <Typography
                 variant="title"
                 color='inherit'

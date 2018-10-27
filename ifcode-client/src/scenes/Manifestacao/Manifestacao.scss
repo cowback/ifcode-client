@@ -1,0 +1,31 @@
+.manifestacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header {
+        .image {
+            width: 100%;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 25px;
+            text-align: center;
+        }
+    }
+
+    .content {
+        width: 80%;
+    }
+
+    .participar {
+        .button-participar {
+            margin-top: 15px;
+
+            &.false {
+                background-color: #b5985a;
+            }
+        }
+    }
+}

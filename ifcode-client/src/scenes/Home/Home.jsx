@@ -12,20 +12,14 @@ export default class Home extends React.Component {
         return <MenuAppBar onLogout={this.makeLogout} />;
     }
 
-    _renderButton() {
-        return <BotaoAdicionar link='/criar-manifestacao' />
-    }
-
     render() {
         return (
             <div>
                 {this._renderNavBar()}
-                {this._renderButton()}
                 <Switch>
                     <Route path="/inicial" exact component={Feed} />
-                    <Route path='/pesquisar' exact component={Home} />
-                    <Route path='/minhas-organizacoes' exact component={Home} />
-                    <Route path='/minhas-manifestacoes' exact component={Home} />
+                    <Route path='/minhas-organizacoes' exact />
+                    <Route path='/minhas-manifestacoes' exact />
                     <Route path='/criar-manifestacao' exact component={CriarManifestacao} />
                     <Route path='/manifestacao/:id' exact component={Manifestacao} />
                     <Route path='/manual' exact component={Manual} />
