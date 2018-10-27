@@ -56,7 +56,6 @@ export default class Login extends React.Component {
     }
 
     onFailure(error) {
-        AlertaService.error('Algo deu errado!', 'Tente novamente.');
     }
 
     render() {

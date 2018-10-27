@@ -32,12 +32,6 @@ class ListaOpcoesMenu extends React.Component {
             </ListItem>
           </Link>
 
-          <Link to='/pesquisar' className={classes.link}>
-            <ListItem button>
-              <ListItemText primary='Pesquisar' />
-            </ListItem>
-          </Link>
-
           <Link to='/minhas-organizacoes' className={classes.link}>
             <ListItem button>
               <ListItemText primary='Minhas organizações' />
@@ -52,7 +46,7 @@ class ListaOpcoesMenu extends React.Component {
 
           <Link to='/manual' className={classes.link}>
             <ListItem button>
-              <ListItemText primary='Manual do Demokratoniano' />
+              <ListItemText primary='Manual do Kratoniano' />
             </ListItem>
           </Link>
         </List>

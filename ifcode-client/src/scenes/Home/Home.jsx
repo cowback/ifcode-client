@@ -5,6 +5,7 @@ import BotaoAdicionar from '../../components/generic/BotaoAdicionar/BotaoAdicion
 import CriarManifestacao from '../CriarManifestacao/CriarManifestacao';
 import Manual from '../Manual/Manual'
 import Feed from '../Feed/Feed'
+import Manifestacao from '../Manifestacao/Manifestacao'
 
 export default class Home extends React.Component {
     _renderNavBar() {
@@ -26,7 +27,7 @@ export default class Home extends React.Component {
                     <Route path='/minhas-organizacoes' exact component={Home} />
                     <Route path='/minhas-manifestacoes' exact component={Home} />
                     <Route path='/criar-manifestacao' exact component={CriarManifestacao} />
-                    <Route path='/manifestacao/:id' exact component={Home} />
+                    <Route path='/manifestacao/:id' exact component={Manifestacao} />
                     <Route path='/manual' exact component={Manual} />
                     <Redirect to="/" />
                 </Switch>

@@ -37,7 +37,7 @@ const styles = theme => ({
     header: {
         padding: '5%',
         display: 'flex',
-        color: '#454040',
+        color: '#272727',
         '&:hover, &:focus, &:focus-within, &:active': {
             color: '#b5985a'
         }
