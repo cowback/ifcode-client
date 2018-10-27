@@ -15,9 +15,9 @@ const styles = {
   },
   color: {
     color: '#ffffff',
-    backgroundColor: '#83bfd3',
+    backgroundColor: '#b5985a',
     '&:hover': {
-      backgroundColor: '#438aa8d6'
+      backgroundColor: '#b5985ac7'
     }
   }
 };
