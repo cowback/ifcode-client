@@ -1,20 +1,23 @@
 import React, { Component } from 'react'
 import Select from '@material-ui/core/Select'
 import TextField from '@material-ui/core/TextField'
-// import Button from '@material-ui/core/Button'
 import Button from '../../../components/generic/Botao/Botao'
 import InputLabel from '@material-ui/core/InputLabel'
 
 import './CriarManifestacaoForm.scss'
 
 export default class CriarManifestacaoForm extends Component {
-    state = { organizacao: '', organizacaoName: '' }
+    state = { organizacoes: [], organizacao: '', organizacaoName: '' }
 
     constructor() {
         super()
         this.handleChangeFile = this.handleChangeFile.bind(this)
         this.handleChangeSelect = this.handleChangeSelect.bind(this)
         this.onClickContinuarButton = this.onClickContinuarButton.bind(this)
+    }
+
+    componentDidMount() {
+        this._buscarOrganizacao()
     }
 
     handleChangeFile(event) {
@@ -42,8 +45,7 @@ export default class CriarManifestacaoForm extends Component {
         this.props.setData(this.state);
     }
 
-    _renderMenuItems() {
-        // TODO: buscar organizações do usuário
+    _buscarOrganizacao() {
         const organizacoes = [
             {
                 id: 1,
@@ -58,6 +60,12 @@ export default class CriarManifestacaoForm extends Component {
                 name: 'Kratos'
             },
         ]
+
+        this.setState({ organizacoes })
+    }
+
+    _renderMenuItems() {
+        const { organizacoes } = this.state
         return organizacoes.map(o => {
             return (
                 <option key={o.id} value={JSON.stringify(o)}>{o.name}</option>
@@ -83,8 +91,7 @@ export default class CriarManifestacaoForm extends Component {
                     <TextField
                         id='date'
                         label='Data'
-                        type='date'
-                        defaultValue='2018-10-27'
+                        type='datetime-local'
                         value={this.state.data}
                         onChange={this.handleChange}
                         className='TextField-mappit'
@@ -116,6 +123,7 @@ export default class CriarManifestacaoForm extends Component {
                 </div>
                 <div className='form-manifestacao-div'>
                     <InputLabel htmlFor='select-organizacao'>Organização:</InputLabel>
+                    {console.log(this.state.organizacaoName)}
                     <Select
                         className='select-organizacao'
                         native
