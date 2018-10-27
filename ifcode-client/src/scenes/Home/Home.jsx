@@ -17,7 +17,7 @@ export default class Home extends React.Component {
         return (
             <div>
                 {this._renderNavBar()}
-
+                {this._renderButton()}
                 <Switch>
                     <Route path="/inicial" exact />
                     <Route path='/pesquisar' exact component={Home} />
