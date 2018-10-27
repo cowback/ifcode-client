@@ -1,0 +1,52 @@
+button.btn.waves-effect.waves-light {
+  bottom: 5%;
+  position: absolute;
+  left: 9%;
+}
+
+.info-mark {
+  font-size: 20px;
+  line-height: 0px;
+}
+
+.div-range-pesquisa {
+  width: 100%;
+  position: absolute;
+  margin-top: 8px;
+  top: 17%;
+}
+
+.range-field {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.map-div {
+  height: 80vh;
+  width: 100%;
+  position: relative;
+  margin-top: 17%;
+}
+
+.map-div-pesquisa {
+  height: 68vh;
+  width: 100%;
+  position: relative;
+  margin-top: 38%;
+}
+
+.opcoes-pesquisa-container {
+  position: absolute;
+  width: 100%;
+  bottom: 4%;
+}
+
+button.btn.waves-effect.waves-light.btn-opcao-pesquisa {
+  margin-top: 16px;
+  position: relative;
+}
+
+.opcoes-pesquisa-map {
+  display: flex;
+  flex-direction: column;
+}
